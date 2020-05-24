@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AltPlayer</string>
+    <string name="tab_text_1">Queue</string>
+    <string name="tab_text_2">Home</string>
+    <string name="tab_text_3">Album</string>
+    <string name="tab_text_4">Artist</string>
+    <string name="tab_text_5">Song</string>
+    <string name="tab_text_6">Genre</string>
+    <string name="tab_text_7">EQ</string>
+    <string name="tab_text_8">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
