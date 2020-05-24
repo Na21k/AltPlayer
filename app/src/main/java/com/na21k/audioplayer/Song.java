@@ -1,10 +1,15 @@
 package com.na21k.audioplayer;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "songs", indices = {@Index("id"), @Index("artist"), @Index("album")})
+@Entity(tableName = "songs", foreignKeys = {@ForeignKey(entity = Album.class,
+        parentColumns = "name", childColumns = "album", onDelete = ForeignKey.CASCADE),
+        @ForeignKey(entity = Artist.class, parentColumns = "name",
+                childColumns = "artist",
+                onDelete = ForeignKey.CASCADE)}, indices = {@Index("id"), @Index("artist"), @Index("album")})
 public class Song {
 
     @PrimaryKey
