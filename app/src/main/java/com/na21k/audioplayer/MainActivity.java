@@ -30,7 +30,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
+    private final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
     private final int SELECT_FOLDER_REQUEST_CODE = 2;
     private static IMediaPlayerFactory mediaPlayerFactory;
     public static IBasicMediaPlayer mediaPlayer;

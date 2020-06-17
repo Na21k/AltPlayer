@@ -54,9 +54,9 @@ public class SongViewModel extends AndroidViewModel {
         return -1;
     }
 
-    private class InsertAsyncTask extends AsyncTask<Song, Void, Void> {
+    private static class InsertAsyncTask extends AsyncTask<Song, Void, Void> {
 
-        SongDao mSongDao;
+        private SongDao mSongDao;
 
         InsertAsyncTask(SongDao mSongDao) {
             this.mSongDao = mSongDao;
@@ -69,9 +69,9 @@ public class SongViewModel extends AndroidViewModel {
         }
     }
 
-    private class ClearAsyncTask extends AsyncTask<Void, Void, Void> {
+    private static class ClearAsyncTask extends AsyncTask<Void, Void, Void> {
 
-        SongDao mSongDao;
+        private SongDao mSongDao;
 
         ClearAsyncTask(SongDao mSongDao) {
             this.mSongDao = mSongDao;
@@ -84,9 +84,9 @@ public class SongViewModel extends AndroidViewModel {
         }
     }
 
-    private class GetCountAsyncTask extends AsyncTask<Void, Void, Integer> {
+    private static class GetCountAsyncTask extends AsyncTask<Void, Void, Integer> {
 
-        SongDao mSongDao;
+        private SongDao mSongDao;
 
         GetCountAsyncTask(SongDao mSongDao) {
             this.mSongDao = mSongDao;

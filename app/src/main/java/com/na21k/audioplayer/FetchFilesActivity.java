@@ -18,6 +18,7 @@ public class FetchFilesActivity extends AppCompatActivity {
     private AlbumViewModel albumViewModel;
     private ArtistViewModel artistViewModel;
     private SongViewModel songViewModel;
+    //private RefillAsyncTask refill;
     private Timer timer;
 
     @Override
@@ -30,6 +31,8 @@ public class FetchFilesActivity extends AppCompatActivity {
         songViewModel = new ViewModelProvider(this).get(SongViewModel.class);
         timer = new Timer();
         timer.schedule(new RefillDatabaseTask(), 70);
+        /*refill = new RefillAsyncTask();
+        refill.execute();*/
     }
 
     private void refillDatabase() {
@@ -37,11 +40,11 @@ public class FetchFilesActivity extends AppCompatActivity {
         albumViewModel.clearAllAlbums();
         artistViewModel.clearAllArtists();
 
-        //TODO ask to select a folder
-        //File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).getAbsolutePath());
-        //TODO set it firstly in on create in main activity
+        //TODO ASK to select a folder or/and remember it
         File dir = new File(MainActivity.musicPath);
         ArrayList<File> files = new ArrayList<>();
+        //TODO try to read files and insert to db immediately and use asynctask
+        //TODO not read all and then insert
         getAllFiles(dir.getAbsolutePath(), files);
 
         final MediaMetadataRetriever metaRetriever = new MediaMetadataRetriever();
@@ -92,4 +95,13 @@ public class FetchFilesActivity extends AppCompatActivity {
             refillDatabase();
         }
     }
+
+    /*private class RefillAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            refillDatabase();
+            return null;
+        }
+    }*/
 }

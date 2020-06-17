@@ -34,9 +34,9 @@ public class ArtistViewModel extends AndroidViewModel {
         new ClearAsyncTask(artistDao).execute();
     }
 
-    private class InsertAsyncTask extends AsyncTask<Artist, Void, Void> {
+    private static class InsertAsyncTask extends AsyncTask<Artist, Void, Void> {
 
-        ArtistDao mArtistDao;
+        private ArtistDao mArtistDao;
 
         public InsertAsyncTask(ArtistDao mArtistDao) {
             this.mArtistDao = mArtistDao;
@@ -49,9 +49,9 @@ public class ArtistViewModel extends AndroidViewModel {
         }
     }
 
-    private class ClearAsyncTask extends AsyncTask<Void, Void, Void> {
+    private static class ClearAsyncTask extends AsyncTask<Void, Void, Void> {
 
-        ArtistDao mArtistDao;
+        private ArtistDao mArtistDao;
 
         public ClearAsyncTask(ArtistDao mArtistDao) {
             this.mArtistDao = mArtistDao;

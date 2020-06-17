@@ -17,7 +17,7 @@ public abstract class UserAudioDatabase extends RoomDatabase {
 
     private static volatile UserAudioDatabase audioDatabaseInstance;
 
-    static UserAudioDatabase getDatabase(final Context context) {
+    public static UserAudioDatabase getDatabase(final Context context) {
         if (audioDatabaseInstance == null) {
             synchronized (UserAudioDatabase.class) {
                 if (audioDatabaseInstance == null) {
